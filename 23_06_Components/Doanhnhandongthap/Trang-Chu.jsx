@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
+import './Trang-Chu.css';
 
 function App() {
   // ===== STATE =====
@@ -470,9 +470,9 @@ function App() {
         {/* Mobile Menu */}
         <div className={`${mobileMenuOpen ? 'block' : 'hidden'} md:hidden fixed top-20 left-0 w-full bg-white shadow-2xl border-t border-gray-100 z-40 transition-all`}>
           <div className="py-4">
-            <a href="/" className="block py-3 px-6 text-base font-medium text-gray-800 hover:text-[#d97706] hover:bg-gray-50">{t.navHome}</a>
-            <a href="/gioi-thieu" className="block py-3 px-6 text-base font-medium text-gray-800 hover:text-[#d97706] hover:bg-gray-50">{t.navAbout}</a>
-            <a href="/hoi-vien" className="block py-3 px-6 text-base font-medium text-gray-800 hover:text-[#d97706] hover:bg-gray-50">{t.navMembers}</a>
+            <a href="./Trang-Chu.jsx" className="block py-3 px-6 text-base font-medium text-gray-800 hover:text-[#d97706] hover:bg-gray-50">{t.navHome}</a>
+            <a href="./Gioi-Thieu.jsx" className="block py-3 px-6 text-base font-medium text-gray-800 hover:text-[#d97706] hover:bg-gray-50">{t.navAbout}</a>
+            <a href="./Hoi-Vien.jsx" className="block py-3 px-6 text-base font-medium text-gray-800 hover:text-[#d97706] hover:bg-gray-50">{t.navMembers}</a>
             <a href="/" className="block py-3 px-6 text-base font-medium text-gray-800 hover:text-[#d97706] hover:bg-gray-50">{t.navActivities}</a>
             <a href="#tin-tuc" onClick={(e) => { e.preventDefault(); scrollToSection('tin-tuc'); }} className="block py-3 px-6 text-base font-medium text-gray-800 hover:text-[#d97706] hover:bg-gray-50">{t.navNews}</a>
             <a href="#lien-he" onClick={(e) => { e.preventDefault(); scrollToSection('lien-he'); }} className="block py-3 px-6 text-base font-medium text-gray-800 hover:text-[#d97706] hover:bg-gray-50">{t.navContact}</a>

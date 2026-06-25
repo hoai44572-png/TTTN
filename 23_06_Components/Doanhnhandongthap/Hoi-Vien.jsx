@@ -121,9 +121,9 @@ function HoiVien() {
           </a>
 
           <nav className="hidden md:flex items-center justify-center flex-1 gap-8">
-            <a href="/" className="text-[#e5e7eb] text-[15px] font-medium whitespace-nowrap hover:text-white transition-colors">{lang.navHome}</a>
-            <a href="/gioi-thieu" className="text-[#e5e7eb] text-[15px] font-medium whitespace-nowrap hover:text-white transition-colors">{lang.navAbout}</a>
-            <a href="/hoi-vien" className="text-[#e5e7eb] text-[15px] font-medium whitespace-nowrap hover:text-white transition-colors">{lang.navMembers}</a>
+            <a href="./Trang-Chu.jsx" className="text-[#e5e7eb] text-[15px] font-medium whitespace-nowrap hover:text-white transition-colors">{lang.navHome}</a>
+            <a href="./Gioi-Thieu.jsx" className="text-[#e5e7eb] text-[15px] font-medium whitespace-nowrap hover:text-white transition-colors">{lang.navAbout}</a>
+            <a href="./Hoi-Vien.jsx" className="text-[#e5e7eb] text-[15px] font-medium whitespace-nowrap hover:text-white transition-colors">{lang.navMembers}</a>
             <a href="/" className="text-[#e5e7eb] text-[15px] font-medium whitespace-nowrap hover:text-white transition-colors">{lang.navActivities}</a>
             <a href="#tin-tuc" onClick={(e) => { e.preventDefault(); scrollToSection('tin-tuc'); }} className="text-[#e5e7eb] text-[15px] font-medium whitespace-nowrap hover:text-white transition-colors">{lang.navNews}</a>
             <a href="#lien-he" onClick={(e) => { e.preventDefault(); scrollToSection('lien-he'); }} className="text-[#e5e7eb] text-[15px] font-medium whitespace-nowrap hover:text-white transition-colors">{lang.navContact}</a>
