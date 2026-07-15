@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MISS MISTER HÀO KHÍ DU HIỆP - Voting</title>
+    <link rel="icon" href="assets/iconapp.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/voting-style.css">
+</head>
+
+<body>
+    <div class="v-wrapper">
+        <div class="v-stage" id="vStage">
+
+            <!-- HEADER -->
+            <header class="v-header">
+                <div class="v-header__inner">
+                    <a href="index.html" class="v-header__logo">
+                        <img src="assets/iconapp.png" alt="Hào Khí Du Hiệp" class="v-header__logo-img">
+                        <div class="v-header__logo-text-group">
+                            <span class="v-header__logo-text">HÀO KHÍ DU HIỆP</span>
+                            <span class="v-header__logo-subtext">NHÀ PHÁT HÀNH MYE</span>
+                        </div>
+                    </a>
+                    <div class="v-header__actions">
+                        <a href="#" class="v-header__icon" aria-label="Trang chủ">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="v-header__icon" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="v-header__login">
+                            <img src="assets/đn.png" alt="Đăng nhập">
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- HERO -->
+            <section class="v-hero">
+                <div class="v-hero__content">
+                    <img class="v-hero__game-logo" src="assets/Logo-HaoKhiDuHiep.png" alt="Hào Khí Du Hiệp">
+                    <img class="v-hero__title-img" src="assets/text.png" alt="Miss Mister Hào Khí Du Hiệp">
+                </div>
+            </section>
+
+            <!-- NAV TABS + VOTE NGAY (outside hero) -->
+            <nav class="v-navtabs">
+                <!-- Tầng nền: clip-path vát góc -->
+                <div class="v-navtabs__rail"></div>
+
+                <!-- Content layer: 4 tabs + badge -->
+                <div class="v-navtabs__content">
+                    <!-- 2 tabs bên trái -->
+                    <div class="v-navtabs__group">
+                        <button type="button" class="v-navtab-btn" id="tabHuongDan">HƯỚNG DẪN</button>
+                        <button type="button" class="v-navtab-btn" id="tabHoaFree">HOA FREE</button>
+                    </div>
+
+                    <!-- VOTE NGAY badge nổi lên giữa -->
+                    <a href="#danh-sach" class="v-navtabs__vote" id="btnVoteNgay">
+                        <img src="assets/votengay.png" alt="Vote Ngay">
+                    </a>
+
+                    <!-- 2 tabs bên phải -->
+                    <div class="v-navtabs__group">
+                        <button type="button" class="v-navtab-btn" id="tabQuaTichLuy">QUÀ TÍCH LŨY</button>
+                        <button type="button" class="v-navtab-btn" id="tabNapHoa">NẠP HOA</button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- DANH SÁCH THÍ SINH -->
+            <section class="v-candidates" id="danh-sach">
+                <div class="v-section-title">
+                    <img src="assets/danhsachthisinh.png" alt="Danh Sách Thí Sinh">
+                </div>
+
+                <!-- Nội dung bên trong: giới hạn max-width 1100px, căn giữa -->
+                <div class="v-candidates__inner">
+                    <!-- FILTER BAR -->
+                    <div class="v-filter-bar">
+                        <div class="v-filter-bar__left">
+                            <div class="v-select-wrap">
+                                <select class="v-select" id="filterServer">
+                                    <option value="">Máy chủ</option>
+                                    <option>S1 - Lý Bạch</option>
+                                </select>
+                                <span class="v-select-arrow">&#9660;</span>
+                            </div>
+                            <div class="v-select-wrap">
+                                <select class="v-select" id="filterType">
+                                    <option value="">Giới Tính</option>
+                                    <option>Nam</option>
+                                    <option>Nữ</option>
+                                </select>
+                                <span class="v-select-arrow">&#9660;</span>
+                            </div>
+                            <div class="v-select-wrap">
+                                <select class="v-select" id="filterBang">
+                                    <option value="">Phòng bang</option>
+                                </select>
+                                <span class="v-select-arrow">&#9660;</span>
+                            </div>
+                        </div>
+                        <div class="v-filter-bar__right">
+                            <div class="v-search-wrap">
+                                <input type="text" class="v-search" id="searchInput" placeholder="Tìm kiếm thí sinh...">
+                                <button class="v-search-btn" aria-label="Tìm kiếm">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <circle cx="11" cy="11" r="8" />
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CANDIDATE GRID -->
+                    <div class="v-card-grid">
+
+                        <article class="v-card">
+                            <img src="assets/card.png" alt="Thí sinh" class="v-card__bg">
+                            <div class="v-card__votes-overlay">
+                                <svg class="v-card__bar-icon" viewBox="0 0 16 16" fill="currentColor">
+                                    <rect x="1" y="8" width="3" height="7" />
+                                    <rect x="6" y="5" width="3" height="10" />
+                                    <rect x="11" y="2" width="3" height="13" />
+                                </svg>
+                                999
+                            </div>
+                            <div class="v-card__flowers-overlay">
+                                9999 <img src="assets/hoa.png" alt="hoa" class="v-card__hoa-icon">
+                            </div>
+                            <div class="v-card__info-overlay">
+                                <div class="v-card__name">Tên thí sinh - SBD 1234</div>
+                                <div class="v-card__server">Server 01 - Lý Bạch</div>
+                            </div>
+                        </article>
+
+                        <article class="v-card">
+                            <img src="assets/card.png" alt="Thí sinh" class="v-card__bg">
+                            <div class="v-card__votes-overlay">
+                                <svg class="v-card__bar-icon" viewBox="0 0 16 16" fill="currentColor">
+                                    <rect x="1" y="8" width="3" height="7" />
+                                    <rect x="6" y="5" width="3" height="10" />
+                                    <rect x="11" y="2" width="3" height="13" />
+                                </svg>
+                                999
+                            </div>
+                            <div class="v-card__flowers-overlay">
+                                9999 <img src="assets/hoa.png" alt="hoa" class="v-card__hoa-icon">
+                            </div>
+                            <div class="v-card__info-overlay">
+                                <div class="v-card__name">Tên thí sinh - SBD 1234</div>
+                                <div class="v-card__server">Server 01 - Lý Bạch</div>
+                            </div>
+                        </article>
+
+                        <article class="v-card">
+                            <img src="assets/card.png" alt="Thí sinh" class="v-card__bg">
+                            <div class="v-card__votes-overlay">
+                                <svg class="v-card__bar-icon" viewBox="0 0 16 16" fill="currentColor">
+                                    <rect x="1" y="8" width="3" height="7" />
+                                    <rect x="6" y="5" width="3" height="10" />
+                                    <rect x="11" y="2" width="3" height="13" />
+                                </svg>
+                                999
+                            </div>
+                            <div class="v-card__flowers-overlay">
+                                9999 <img src="assets/hoa.png" alt="hoa" class="v-card__hoa-icon">
+                            </div>
+                            <div class="v-card__info-overlay">
+                                <div class="v-card__name">Tên thí sinh - SBD 1234</div>
+                                <div class="v-card__server">Server 01 - Lý Bạch</div>
+                            </div>
+                        </article>
+
+                        <article class="v-card">
+                            <img src="assets/card.png" alt="Thí sinh" class="v-card__bg">
+                            <div class="v-card__votes-overlay">
+                                <svg class="v-card__bar-icon" viewBox="0 0 16 16" fill="currentColor">
+                                    <rect x="1" y="8" width="3" height="7" />
+                                    <rect x="6" y="5" width="3" height="10" />
+                                    <rect x="11" y="2" width="3" height="13" />
+                                </svg>
+                                999
+                            </div>
+                            <div class="v-card__flowers-overlay">
+                                9999 <img src="assets/hoa.png" alt="hoa" class="v-card__hoa-icon">
+                            </div>
+                            <div class="v-card__info-overlay">
+                                <div class="v-card__name">Tên thí sinh - SBD 1234</div>
+                                <div class="v-card__server">Server 01 - Lý Bạch</div>
+                            </div>
+                        </article>
+
+                        <article class="v-card">
+                            <img src="assets/card.png" alt="Thí sinh" class="v-card__bg">
+                            <div class="v-card__votes-overlay">
+                                <svg class="v-card__bar-icon" viewBox="0 0 16 16" fill="currentColor">
+                                    <rect x="1" y="8" width="3" height="7" />
+                                    <rect x="6" y="5" width="3" height="10" />
+                                    <rect x="11" y="2" width="3" height="13" />
+                                </svg>
+                                999
+                            </div>
+                            <div class="v-card__flowers-overlay">
+                                9999 <img src="assets/hoa.png" alt="hoa" class="v-card__hoa-icon">
+                            </div>
+                            <div class="v-card__info-overlay">
+                                <div class="v-card__name">Tên thí sinh - SBD 1234</div>
+                                <div class="v-card__server">Server 01 - Lý Bạch</div>
+                            </div>
+                        </article>
+
+                        <article class="v-card">
+                            <img src="assets/card.png" alt="Thí sinh" class="v-card__bg">
+                            <div class="v-card__votes-overlay">
+                                <svg class="v-card__bar-icon" viewBox="0 0 16 16" fill="currentColor">
+                                    <rect x="1" y="8" width="3" height="7" />
+                                    <rect x="6" y="5" width="3" height="10" />
+                                    <rect x="11" y="2" width="3" height="13" />
+                                </svg>
+                                999
+                            </div>
+                            <div class="v-card__flowers-overlay">
+                                9999 <img src="assets/hoa.png" alt="hoa" class="v-card__hoa-icon">
+                            </div>
+                            <div class="v-card__info-overlay">
+                                <div class="v-card__name">Tên thí sinh - SBD 1234</div>
+                                <div class="v-card__server">Server 01 - Lý Bạch</div>
+                            </div>
+                        </article>
+
+                        <article class="v-card">
+                            <img src="assets/card.png" alt="Thí sinh" class="v-card__bg">
+                            <div class="v-card__votes-overlay">
+                                <svg class="v-card__bar-icon" viewBox="0 0 16 16" fill="currentColor">
+                                    <rect x="1" y="8" width="3" height="7" />
+                                    <rect x="6" y="5" width="3" height="10" />
+                                    <rect x="11" y="2" width="3" height="13" />
+                                </svg>
+                                999
+                            </div>
+                            <div class="v-card__flowers-overlay">
+                                9999 <img src="assets/hoa.png" alt="hoa" class="v-card__hoa-icon">
+                            </div>
+                            <div class="v-card__info-overlay">
+                                <div class="v-card__name">Tên thí sinh - SBD 1234</div>
+                                <div class="v-card__server">Server 01 - Lý Bạch</div>
+                            </div>
+                        </article>
+
+                        <article class="v-card">
+                            <img src="assets/card.png" alt="Thí sinh" class="v-card__bg">
+                            <div class="v-card__votes-overlay">
+                                <svg class="v-card__bar-icon" viewBox="0 0 16 16" fill="currentColor">
+                                    <rect x="1" y="8" width="3" height="7" />
+                                    <rect x="6" y="5" width="3" height="10" />
+                                    <rect x="11" y="2" width="3" height="13" />
+                                </svg>
+                                999
+                            </div>
+                            <div class="v-card__flowers-overlay">
+                                9999 <img src="assets/hoa.png" alt="hoa" class="v-card__hoa-icon">
+                            </div>
+                            <div class="v-card__info-overlay">
+                                <div class="v-card__name">Tên thí sinh - SBD 1234</div>
+                                <div class="v-card__server">Server 01 - Lý Bạch</div>
+                            </div>
+                        </article>
+
+                        <article class="v-card">
+                            <img src="assets/card.png" alt="Thí sinh" class="v-card__bg">
+                            <div class="v-card__votes-overlay">
+                                <svg class="v-card__bar-icon" viewBox="0 0 16 16" fill="currentColor">
+                                    <rect x="1" y="8" width="3" height="7" />
+                                    <rect x="6" y="5" width="3" height="10" />
+                                    <rect x="11" y="2" width="3" height="13" />
+                                </svg>
+                                999
+                            </div>
+                            <div class="v-card__flowers-overlay">
+                                9999 <img src="assets/hoa.png" alt="hoa" class="v-card__hoa-icon">
+                            </div>
+                            <div class="v-card__info-overlay">
+                                <div class="v-card__name">Tên thí sinh - SBD 1234</div>
+                                <div class="v-card__server">Server 01 - Lý Bạch</div>
+                            </div>
+                        </article>
+
+                    </div>
+                    <!-- PAGINATION -->
+                    <div class="v-pagination">
+                        <button class="v-page-btn v-page-btn--active" id="pageFirst">Đầu</button>
+                        <button class="v-page-btn" id="pagePrev">Trang trước</button>
+                        <button class="v-page-btn v-page-btn--num" id="pageNum">1</button>
+                        <button class="v-page-btn v-page-btn--num" id="pageNum">2</button>
+                        <button class="v-page-btn v-page-btn--num" id="pageNum">3</button>
+                        <button class="v-page-btn" id="pageNext">Trang sau</button>
+                        <button class="v-page-btn" id="pageLast">Cuối</button>
+                    </div><!-- /.v-pagination -->
+                </div><!-- /.v-candidates__inner -->
+            </section>
+
+            <!-- TÍCH LŨY MỐC ĐỔI QUÀ -->
+            <section class="v-milestone">
+                <div class="v-section-title">
+                    <img src="assets/tichluymocdoiqua.png" alt="Tích Lũy Mốc Đổi Quà">
+                </div>
+
+                <div class="v-milestone__box">
+                    <p class="v-milestone__sub">Đã tặng hoa 0 hoa</p>
+
+                    <div class="v-milestone__track-wrap">
+                        <div class="v-milestone__track">
+                            <div class="v-milestone__fill" style="width:0%"></div>
+                            <div class="v-milestone__marker" style="left:0%">
+                                <img src="assets/hoa 2.png" alt="hoa" class="v-milestone__hoa">
+                                <span class="v-milestone__label">50 Hoa</span>
+                            </div>
+                            <div class="v-milestone__marker" style="left:33.3%">
+                                <img src="assets/hoa 2.png" alt="hoa" class="v-milestone__hoa">
+                                <span class="v-milestone__label">150 Hoa</span>
+                            </div>
+                            <div class="v-milestone__marker" style="left:66.6%">
+                                <img src="assets/hoa 2.png" alt="hoa" class="v-milestone__hoa">
+                                <span class="v-milestone__label">500 Hoa</span>
+                            </div>
+                            <div class="v-milestone__marker" style="left:100%">
+                                <img src="assets/hoa 2.png" alt="hoa" class="v-milestone__hoa">
+                                <span class="v-milestone__label">1000 Hoa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="v-milestone__rewards">
+                        <!-- Mốc 50 Hoa -->
+                        <div class="v-reward-item">
+                            <div class="v-reward-item__box">
+                                <div class="v-reward-grid">
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                </div>
+                            </div>
+                            <button class="v-reward-item__btn-img" aria-label="Nhận thưởng">
+                                <img src="assets/buttonnhan.png" alt="Nhận">
+                            </button>
+                        </div>
+                        <!-- Mốc 150 Hoa -->
+                        <div class="v-reward-item">
+                            <div class="v-reward-item__box">
+                                <div class="v-reward-grid">
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                </div>
+                            </div>
+                            <button class="v-reward-item__btn-img" aria-label="Nhận thưởng">
+                                <img src="assets/buttonnhan.png" alt="Nhận">
+                            </button>
+                        </div>
+                        <!-- Mốc 500 Hoa -->
+                        <div class="v-reward-item">
+                            <div class="v-reward-item__box">
+                                <div class="v-reward-grid">
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell v-reward-cell--highlight"></div>
+                                </div>
+                            </div>
+                            <button class="v-reward-item__btn-img" aria-label="Nhận thưởng">
+                                <img src="assets/buttonnhan.png" alt="Nhận">
+                            </button>
+                        </div>
+                        <!-- Mốc 1000 Hoa -->
+                        <div class="v-reward-item">
+                            <div class="v-reward-item__box">
+                                <div class="v-reward-grid">
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                    <div class="v-reward-cell"></div>
+                                </div>
+                            </div>
+                            <button class="v-reward-item__btn-img" aria-label="Nhận thưởng">
+                                <img src="assets/buttonnhan.png" alt="Nhận">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BẢNG XẾP HẠNG -->
+            <section class="v-leaderboard">
+                <div class="v-section-title">
+                    <img src="assets/bxh.png" alt="Bảng Xếp Hạng">
+                </div>
+
+                <div class="v-bxh__frame">
+                    <!-- 3 tabs chuyển vào trong khung -->
+                    <div class="v-bxh__tabs">
+                        <button class="v-bxh__tab v-bxh__tab--active" id="tabMynhan">
+                            <img src="assets/bxhmynhan.png" alt="BXH Mỹ Nhân">
+                        </button>
+                        <button class="v-bxh__tab" id="tabMynam">
+                            <img src="assets/bxhmynam.png" alt="BXH Mỹ Nam">
+                        </button>
+                        <button class="v-bxh__tab" id="tabPhugiap">
+                            <img src="assets/bxhphugiap.png" alt="BXH Phù Giáp">
+                        </button>
+                    </div>
+
+                    <div class="v-bxh__table-wrap">
+                        <table class="v-bxh__table">
+                            <thead>
+                                <tr>
+                                    <th>Hạng</th>
+                                    <th>Tên Nhân Vật</th>
+                                    <th>Máy Chủ</th>
+                                    <th>Hoa Tặng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="assets/hang1.png" alt="Hạng 1" class="v-bxh__rank-img"></td>
+                                    <td>Lục Trà Bạc Hà</td>
+                                    <td>S1 - Lý Bạch</td>
+                                    <td>9999.9999</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="assets/hang2.png" alt="Hạng 2" class="v-bxh__rank-img"></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="assets/hang3.png" alt="Hạng 3" class="v-bxh__rank-img"></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="v-bxh__rank-num">4</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="v-bxh__rank-num">5</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="v-footer">
+                <p>© 2026 Hào Khí Du Hiệp. Bản quyền thuộc về nhà phát hành.</p>
+            </footer>
+
+        </div>
+    </div>
+    <script src="js/voting-script.js"></script>
+</body>
+
+</html>
